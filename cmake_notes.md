@@ -1,7 +1,7 @@
 # cmake notes
 ## 0. single `main.cpp`
 
-```
+```c++
 // main.cpp
 #include <iostream>
 using namespace std;
@@ -11,6 +11,7 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 ```
+
 the cmake file is simple:
 
 ```
@@ -21,7 +22,7 @@ add_executable(main_bin main.cpp)
 ```
 ## 1. `main.cpp` + `my_math.h`
 
-```
+```c++
 // main.cpp
 #include "my_math.h"
 #include <iostream>
@@ -33,7 +34,7 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 ```
-```
+```c++
 #include <cmath>
 
 double mySqrt(double x) {
@@ -59,7 +60,7 @@ add_executable(testbin main.cpp)
 method 1 and 2 are the same, except for the latter one explicitly writes all the `*.cpp` files
 
 ## 2. `main.cpp` + `my_lib`/`*.cpp`, `*.h`
-```
+```c++
 // main.cpp
 #include "my_lib/myPoint.h"
 #include "my_lib/my_math.h"
@@ -76,7 +77,7 @@ int main(int argc, char const *argv[]) {
 ```
  This is the main function, while the other libs created by myself is in: ./my_lib
 
- ```
+ ```c++
  // my_math.h
  #include <cmath>
 
@@ -88,7 +89,8 @@ int main(int argc, char const *argv[]) {
 ```
 
 and
-```
+
+```c++
 // myPoint.h
 #pragma once
 #include <ostream>
@@ -102,7 +104,7 @@ public:
   Point(int xx = 0, int yy = 0) : x(xx), y(yy){};
 };
 ```
-```
+```c++
 // myPoint.cpp
 #include "myPoint.h"
 #include <ostream>
@@ -115,7 +117,7 @@ ostream &operator<<(ostream &os, Point &obj) {
 ```
 
 This time, `CMakeLists.txt` is as follows:
-- A CMakeLists.txt inside my_lib:
+- A `CMakeLists.txt` inside `my_lib`:
 
 ```
 # CMakeLists.txt in my_lib
@@ -124,7 +126,8 @@ add_library(my_lib_functions ${DIR_LIBS_SRCS})
 
 ```
 
-- A CMakeLists.txt in the main.cpp folder
+- A `CMakeLists.txt` in the `demo_02`
+
 ```
 # CMakeLists.txt in ./
 cmake_minimum_required(VERSION 2.6)
@@ -143,3 +146,13 @@ target_link_libraries(demo2_bin my_lib_functions)
 ```
 The added part :
 `target_link_libraries` is after the `add_executable` part.
+
+
+## 3. `main.cpp` + `folder1` + `folder2`
+> notes:
+
+keyword | explaination
+-|-
+`add_library` | generate static lib
+`add_subdirectory` | add subdirectory, `CMakeLists.ttx` is needed
+`target_link_libraries` | link libs after `add_executable`.

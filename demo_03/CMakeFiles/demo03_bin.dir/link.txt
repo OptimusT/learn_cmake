@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/demo03_bin.dir/main.cpp.o  -o demo03_bin my_point/libmy_point_lib.a 

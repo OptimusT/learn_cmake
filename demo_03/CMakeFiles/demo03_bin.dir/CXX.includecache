@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/majunyu/Code/learn_cmake/demo_03/main.cpp
+my_math/my_math.h
+/home/majunyu/Code/learn_cmake/demo_03/my_math/my_math.h
+my_point/myPoint.h
+/home/majunyu/Code/learn_cmake/demo_03/my_point/myPoint.h
+iostream
+-
+
+/home/majunyu/Code/learn_cmake/demo_03/my_math/my_math.h
+cmath
+-
+
+/home/majunyu/Code/learn_cmake/demo_03/my_point/myPoint.h
+ostream
+-
+
