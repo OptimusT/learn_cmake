@@ -1,0 +1,3 @@
+/home/majunyu/Code/learn_cmake/demo_01/CMakeFiles/rebuild_cache.dir
+/home/majunyu/Code/learn_cmake/demo_01/CMakeFiles/testbin.dir
+/home/majunyu/Code/learn_cmake/demo_01/CMakeFiles/edit_cache.dir

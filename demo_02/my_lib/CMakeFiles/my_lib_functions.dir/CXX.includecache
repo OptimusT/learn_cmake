@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/majunyu/Code/learn_cmake/demo_02/my_lib/myPoint.cpp
+myPoint.h
+/home/majunyu/Code/learn_cmake/demo_02/my_lib/myPoint.h
+ostream
+-
+
+/home/majunyu/Code/learn_cmake/demo_02/my_lib/myPoint.h
+ostream
+-
+
