@@ -1,4 +1,5 @@
 # cmake notes
+
 ## 0. single `main.cpp`
 
 ```c++
@@ -104,6 +105,7 @@ public:
   Point(int xx = 0, int yy = 0) : x(xx), y(yy){};
 };
 ```
+
 ```c++
 // myPoint.cpp
 #include "myPoint.h"
@@ -149,6 +151,7 @@ The added part :
 
 
 ## 3. `main.cpp` + `folder1` + `folder2`
+
 > notes:
 
 keyword | explaination
